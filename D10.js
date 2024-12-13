@@ -63,7 +63,7 @@ me.skills.pop();
 console.log(me)
 
 
-// Funzioni
+// Funzioni           //ho preferito l'uso delle arrow function su ogni esercizio per abitudine  per rispettare lo standard ES6
 
 /* ESERCIZIO 1
   Crea una funzione chiamata "dice": deve generare un numero casuale tra 1 e 6.
@@ -355,8 +355,9 @@ const removeIndex = (index) => {
 
 
 
-// DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
+// DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina) non ho capito se dovevo definire anche nell'html quindi ho definito le funzioni senza testarle
 
+// ho preferito agganciare i nodi con querySelectorAll per rispettare ES6
 /* ESERCIZIO 20
   Scrivi una funzione per selezionare l'elemento dotato di id "container" all'interno della pagina.
 */
@@ -375,7 +376,7 @@ document.querySelectorAll("td");
 
 const printTdText = () => {
   const tds = document.querySelectorAll('td');
-  
+
   tds.forEach(td => {
     console.log(td.textContent);
   });
@@ -403,18 +404,43 @@ bkgcolor();
 */
 
 const newElement = () => {
-  document.querySelector("#myList");
-  document.createElement("li");
-  
-}
+  const myList = document.querySelector("myList");
+  const newElement = document.createElement("li");
+  newElement.innerHTML = "Testo";
+  myList.appendChild(newElement);
+
+};
+
+newElement();
 
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
+const DeleteList = () => {
+  const myList = document.querySelector("#myList");
+
+  while (myList.firstChild) {
+    myList.removeChild(myList.firstChild);
+  }
+};
+
+clearList();
+
 
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
+
+const newClass = () => {
+  const allTr = document.querySelectorAll('tr');
+
+  allTr.forEach(allTr => {
+    allTr.classList.add('test');
+  });
+};
+
+//newClass();
+
 
 // [EXTRA] JS Avanzato
 
@@ -445,6 +471,25 @@ const newElement = () => {
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
+
+const isItPrime = (num) => {
+  if (num <= 1) {
+    return false; 
+  }
+
+  // Verifico se num è divisibile per qualsiasi numero tra 2 e la radice quadrata di num
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) {
+      return false; // Se num è divisibile per i, non è un numero primo
+    }
+  }
+
+  return true; // Se nessun numero lo divide, è un numero primo
+};
+
+console.log(isItPrime(7));  // dovrebbe risultare true
+console.log(isItPrime(10)); // dovrebbe risultare false
+
 
 /* Questo array viene usato per gli esercizi. Non modificarlo. */
 
