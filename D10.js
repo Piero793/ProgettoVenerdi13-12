@@ -256,7 +256,7 @@ console.log(deleteProp(ogg, "anni"));
 */
 
 /*const newestMovie = () => {
-  let FilmpiùRecente = movies[0];         dovrei aver commesso un qualche errore in questo punto
+  let FilmpiùRecente = movies[0];         //dovrei aver commesso un qualche errore in questo punto
 
   // Scorri l'array dei film
   for (let i = 1; i < movies.length; i++) {
@@ -267,7 +267,7 @@ console.log(deleteProp(ogg, "anni"));
   }
 
   return FilmpiùRecente;
-};                                                    
+};
 
 console.log(newestMovie());
 
@@ -355,7 +355,7 @@ const removeIndex = (index) => {
 
 
 
-// DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina) non ho capito se dovevo definire anche nell'html quindi ho definito le funzioni senza testarle
+// DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina) non ho capito se dovevo definire anche nell'html quindi non ho provato tutti i risultati
 
 // ho preferito agganciare i nodi con querySelectorAll per rispettare ES6
 /* ESERCIZIO 20
@@ -411,7 +411,7 @@ const newElement = () => {
 
 };
 
-newElement();
+//console.log(newElement());
 
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
@@ -424,7 +424,7 @@ const DeleteList = () => {
   }
 };
 
-clearList();
+//console.log(clearList());
 
 
 /* ESERCIZIO 26
@@ -439,7 +439,7 @@ const newClass = () => {
   });
 };
 
-//newClass();
+console.log(newClass());
 
 
 // [EXTRA] JS Avanzato
@@ -455,6 +455,15 @@ const newClass = () => {
   ***
  
 */
+const halfTree = (num) => {
+  for (let i = 1; i <= num; i++) {
+    console.log('*'.repeat(i));
+  }
+}
+
+
+console.log(halfTree(4));
+
 
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
@@ -467,6 +476,21 @@ const newClass = () => {
   *****
  
 */
+const tree = number => {
+  for (let i = 1; i <= number; i++) {
+    let spaces = ' '.repeat(number - i);
+    let stars = '*'.repeat(2 * i - 1);
+    console.log(spaces + stars + spaces);
+  }
+};
+
+
+console.log(tree(5));
+
+
+
+
+
 
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
@@ -474,7 +498,7 @@ const newClass = () => {
 
 const isItPrime = (num) => {
   if (num <= 1) {
-    return false; 
+    return false;
   }
 
   // Verifico se num è divisibile per qualsiasi numero tra 2 e la radice quadrata di num
